@@ -5,3 +5,14 @@
 
   min-height: 100svh;
 }
+
+@media (max-width: 560px) {
+  .App {
+    grid-template-columns: auto;
+    grid-template-rows: 1fr auto;
+
+    .NavBar {
+      order: 100;
+    }
+  }
+}
