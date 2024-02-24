@@ -1,0 +1,7 @@
+.App {
+  display: grid;
+  // auto = NavBar width: 280px
+  grid-template-columns: auto 1fr;
+
+  min-height: 100svh;
+}
