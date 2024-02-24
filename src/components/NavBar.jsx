@@ -8,7 +8,7 @@ function NavBar () {
     <nav className='NavBar'>
       <header>
         <NavLink to='/'>
-          <img src='/logo/big-pink.png' alt='' />
+          <img src='/logo/min/pink.png' alt='small pink Blinked logo' />
         </NavLink>
         <NavLink to='/explore'>
           <BsSearch />
