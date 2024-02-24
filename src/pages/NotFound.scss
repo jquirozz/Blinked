@@ -1,0 +1,40 @@
+.NotFound {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+
+    gap: 3rem;
+    padding: 0.5rem;
+
+    min-height: 100svh;
+
+    & header {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+
+        & img {
+            width: 8rem;
+        }
+        & h2 {
+            font-size: 3rem;
+            font-weight: 800;
+        }
+    }
+    & a {
+        padding: 1rem 2rem;
+
+        border-radius: 5px;
+
+        color: #fff;
+        background: #000;
+
+        // & h3 {}
+
+        &:hover {
+            background: #F3346D;
+        }
+    }
+}
