@@ -1,0 +1,78 @@
+.Navigation {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    padding: 1rem 0;
+
+    height: 4rem;
+
+    background: #000;
+
+    & form {
+        display: grid;
+        grid-template-columns: 1fr auto;
+
+        overflow: hidden;
+        border-radius: 999px;
+
+        background: #fff;
+
+        & input {
+            font-size: 1rem;
+
+            width: 400px;
+
+            padding: 0.75rem;
+            padding-left: 1rem;
+        }
+        & button {
+            display: grid;
+            place-items: center;
+
+            padding: 0.75rem 1rem;
+
+            border-radius: 999px;
+            cursor: pointer;
+
+            background: transparent;
+
+            & svg {
+                font-size: 1.25rem;
+            }
+        }
+        &:has(input:focus) {
+            & button {
+                background: #f4346d;
+            }
+        }
+    }
+    & aside {
+        display: flex;
+
+        gap: 0.75rem;
+        padding-right: 0.75rem;
+
+        overflow: scroll;
+        width: 100%;
+        max-width: 500px;
+
+        &::-webkit-scrollbar {
+            width: 0;
+            height: 0;
+            background: transparent;
+        }
+
+        & button {
+            padding: 0.75rem 1.25rem;
+            border-radius: 5px;
+
+            cursor: pointer;
+            background: #fff;
+
+            &:hover {
+                background: #f4346d;
+            }
+        }
+    }
+}

@@ -4,7 +4,10 @@ import NotFound from './pages/NotFound'
 import Recent from './pages/recent/Recent'
 import Explore from './pages/explore/Explore'
 import Profile from './pages/profile/Profile'
+
 import Configuration from './pages/configuration/Configuration'
+import Theme from './pages/configuration/components/Theme'
+import About from './pages/configuration/components/About'
 
 import NavBar from './components/NavBar'
 
@@ -20,7 +23,10 @@ function App () {
           <Route path='/' element={<Recent />} />
           <Route path='/explore' element={<Explore />} />
           <Route path='/profile' element={<Profile />} />
-          <Route path='/configuration' element={<Configuration />} />
+          <Route path='/configuration' element={<Configuration />}>
+            <Route path='theme' element={<Theme />} />
+            <Route path='about' element={<About />} />
+          </Route>
         </Routes>
       </BrowserRouter>
     </div>
