@@ -1,4 +1,5 @@
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
+import { useNavigate } from 'react-router-dom'
 import { useDraggable } from 'react-use-draggable-scroll'
 
 import './Navigation.scss'
@@ -19,23 +20,49 @@ const TAGS = [
   'Wallpapers'
 ]
 
-function Navigation () {
+function Navigation ({ search, setSearch }) {
+  const [input, setInput] = useState('')
+
   const tagsRef = useRef()
   const { events } = useDraggable(tagsRef)
 
+  const navigate = useNavigate()
+
+  const handleSubmit = e => {
+    e.preventDefault()
+
+    if (input.length > 2) {
+      setSearch(input)
+      redirectTo(input)
+      setInput('')
+    }
+  }
+
+  const handleTagClick = tag => {
+    setSearch(tag)
+    redirectTo(tag)
+  }
+
+  const redirectTo = path => navigate(`/explore/${path}`)
+
   return (
     <div className='Navigation'>
-      <form
-      // onSubmit={}
-      >
-        <input type='text' />
+      <form onSubmit={e => handleSubmit(e)}>
+        <input
+          type='text'
+          value={input}
+          onChange={e => setInput(e.target.value)}
+          placeholder={search || 'Popular'}
+        />
         <button type='submit'>
           <BsSearch />
         </button>
       </form>
       <aside ref={tagsRef} {...events}>
         {TAGS.map((tag, key) => (
-          <button key={key}>{tag}</button>
+          <button key={key} onClick={() => handleTagClick(tag)}>
+            {tag}
+          </button>
         ))}
       </aside>
     </div>

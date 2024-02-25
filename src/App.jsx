@@ -22,7 +22,9 @@ function App () {
           <Routes>
             <Route path='*' element={<NotFound />} />
             <Route path='/' element={<Recent />} />
-            <Route path='/explore' element={<Explore />} />
+            <Route path='/explore' element={<Explore />}>
+              <Route path=':search' element={null} />
+            </Route>
             <Route path='/profile' element={<Profile />} />
             <Route path='/configuration' element={<Configuration />}>
               <Route path='theme' element={<Theme />} />

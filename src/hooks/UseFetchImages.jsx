@@ -1,11 +1,10 @@
-// UseFetchQuery
 // Fecth images by query
 // Without params it will fetch popular pictures
 
 import { useCallback, useEffect, useState } from 'react'
 import { fetchByQuery } from '../services/fetchByQuery'
 
-function UseFetchQuery ({ setArray, query, page, order }) {
+function UseFetchImages ({ setArray, fetchBy, query, page, order }) {
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(true)
 
@@ -13,7 +12,12 @@ function UseFetchQuery ({ setArray, query, page, order }) {
     // Reset values
     setError(false)
     try {
-      const res = await fetchByQuery({ query, page, order })
+      let res = []
+      if (fetchBy) {
+        res = await fetchBy({ query, page, order })
+      } else {
+        res = await fetchByQuery({ query, page, order })
+      }
 
       // Check if the is any error
       if (res.errors) throw new Error('Error occurred: ' + res.errors[0])
@@ -31,7 +35,7 @@ function UseFetchQuery ({ setArray, query, page, order }) {
     } finally {
       setLoading(false)
     }
-  }, [setArray, query, order, page])
+  }, [query, order, page, setArray, fetchBy])
 
   useEffect(() => {
     fetchPhotos()
@@ -40,4 +44,4 @@ function UseFetchQuery ({ setArray, query, page, order }) {
   return { error, loading }
 }
 
-export default UseFetchQuery
+export default UseFetchImages

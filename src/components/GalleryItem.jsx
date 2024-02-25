@@ -17,10 +17,10 @@ function GalleryItem ({ item }) {
 
   return (
     <div className='GalleryItem'>
+      <img className='picture' src={small_s3} alt={alt_description} />
       <Link to={links.html}>
         <FaUnsplash />
       </Link>
-      <img className='picture' src={small_s3} alt={alt_description} />
       <footer>
         <section className='user'>
           <img src={profile_image.small} alt={`${username} profile picture`} />
