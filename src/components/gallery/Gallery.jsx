@@ -1,9 +1,9 @@
 import GalleryItem from './GalleryItem'
-import LoadMore from './buttons/LoadMore'
+import Pagination from './Pagination.jsx'
 
-import './style/Gallery.scss'
+import './Gallery.scss'
 
-function Gallery ({ array }) {
+function Gallery ({ array, page, maxPage, setPage }) {
   return (
     <div className='Gallery'>
       <header>
@@ -11,7 +11,7 @@ function Gallery ({ array }) {
           <GalleryItem item={item} key={key} />
         ))}
       </header>
-      <LoadMore />
+      <Pagination page={page} maxPage={maxPage} setPage={setPage} />
     </div>
   )
 }

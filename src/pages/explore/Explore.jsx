@@ -6,18 +6,18 @@ import { fetchByQuery } from '../../services/fetchByQuery'
 import Loading from '../../components/Loading'
 import NotFound from '../NotFound'
 
-import Gallery from '../../components/Gallery'
+import Gallery from '../../components/gallery/Gallery'
 import Navigation from './components/Navigation'
 
 import './Explore.scss'
 
 function Explore () {
+  const [page, setPage] = useState(1)
   const [search, setSearch] = useState('')
-  const [popular, setPopular] = useState([])
-  const { error, loading } = UseFetchImages({
+  const { images, maxPage, error, loading } = UseFetchImages({
     query: search,
+    page,
     order: 'popular',
-    setArray: setPopular,
     fetchBy: fetchByQuery
   })
 
@@ -27,7 +27,7 @@ function Explore () {
   return (
     <div className='Explore'>
       <Navigation search={search} setSearch={setSearch} />
-      <Gallery array={popular} />
+      <Gallery array={images} page={page} maxPage={maxPage} setPage={setPage} />
     </div>
   )
 }

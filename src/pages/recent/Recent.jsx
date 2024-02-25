@@ -6,14 +6,12 @@ import { fetchByQuery } from '../../services/fetchByQuery'
 import Loading from '../../components/Loading'
 import NotFound from '../NotFound'
 
-import Gallery from '../../components/Gallery'
+import Gallery from '../../components/gallery/Gallery'
 import './Recent.scss'
 
 function Recent () {
-  const [recent, setRecent] = useState([])
-  const { error, loading } = UseFetchImages({
+  const { images, error, loading } = UseFetchImages({
     order: 'latest',
-    setArray: setRecent,
     fetchBy: fetchByQuery
   })
 
@@ -22,7 +20,7 @@ function Recent () {
 
   return (
     <div className='Recent'>
-      <Gallery array={recent} />
+      <Gallery array={images} />
     </div>
   )
 }

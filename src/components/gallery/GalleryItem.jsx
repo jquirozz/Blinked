@@ -1,15 +1,15 @@
 import { Link } from 'react-router-dom'
 
-import Like from '../components/buttons/Like'
+import Like from '../buttons/Like'
 
-import './style/GalleryItem.scss'
+import './GalleryItem.scss'
 import { FaUnsplash } from 'react-icons/fa'
 
 function GalleryItem ({ item }) {
   // general
   const { alt_description, links } = item
   // image
-  const { full, raw, regular, small, small_s3, thumb } = item.urls
+  const { small_s3 } = item.urls
   // likes
   const { liked_by_user, likes } = item
   // user
