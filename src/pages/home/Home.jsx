@@ -7,11 +7,13 @@ import Loading from '../../components/Loading'
 import NotFound from '../NotFound'
 
 import Gallery from '../../components/gallery/Gallery'
-import './Recent.scss'
+import './Home.scss'
 
-function Recent () {
-  const { images, error, loading } = UseFetchImages({
+function Home () {
+  const [page, setPage] = useState(1)
+  const { images, maxPage, error, loading } = UseFetchImages({
     order: 'latest',
+    page,
     fetchBy: fetchByQuery
   })
 
@@ -19,10 +21,10 @@ function Recent () {
   if (error) return <NotFound />
 
   return (
-    <div className='Recent'>
-      <Gallery array={images} />
+    <div className='Home'>
+      <Gallery array={images} page={page} maxPage={maxPage} setPage={setPage} />
     </div>
   )
 }
 
-export default Recent
+export default Home

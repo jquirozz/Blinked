@@ -26,7 +26,7 @@ function Explore () {
 
   return (
     <div className='Explore'>
-      <Navigation search={search} setSearch={setSearch} />
+      <Navigation search={search} setSearch={setSearch} setPage={setPage} />
       <Gallery array={images} page={page} maxPage={maxPage} setPage={setPage} />
     </div>
   )

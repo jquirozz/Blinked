@@ -20,7 +20,7 @@ const TAGS = [
   'Wallpapers'
 ]
 
-function Navigation ({ search, setSearch }) {
+function Navigation ({ search, setSearch, setPage }) {
   const [input, setInput] = useState('')
 
   const tagsRef = useRef()
@@ -43,7 +43,10 @@ function Navigation ({ search, setSearch }) {
     redirectTo(tag)
   }
 
-  const redirectTo = path => navigate(`/explore/${path}`)
+  const redirectTo = path => {
+    setPage(1)
+    navigate(`/explore/${path}`)
+  }
 
   return (
     <div className='Navigation'>

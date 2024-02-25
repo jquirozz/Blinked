@@ -1,7 +1,7 @@
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
 import NotFound from './pages/NotFound'
-import Recent from './pages/recent/Recent'
+import Home from './pages/home/Home'
 import Explore from './pages/explore/Explore'
 import Profile from './pages/profile/Profile'
 
@@ -21,7 +21,7 @@ function App () {
         <div className='display'>
           <Routes>
             <Route path='*' element={<NotFound />} />
-            <Route path='/' element={<Recent />} />
+            <Route path='/' element={<Home />} />
             <Route path='/explore' element={<Explore />}>
               <Route path=':search' element={null} />
             </Route>
