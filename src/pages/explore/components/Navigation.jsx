@@ -5,16 +5,18 @@ import './Navigation.scss'
 import { BsSearch } from 'react-icons/bs'
 
 const TAGS = [
-  'Wallpapers',
-  'Nature',
-  'Travel',
-  'Love',
-  'Gaming',
-  'Film',
-  'Event',
+  '3D Renders',
   'Animals',
+  'Event',
+  'Film',
+  'Food & Drink',
+  'Gaming',
+  'Love',
+  'Nature',
   'People',
-  'Sports'
+  'Sports',
+  'Travel',
+  'Wallpapers'
 ]
 
 function Navigation () {
