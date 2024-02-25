@@ -60,6 +60,7 @@
     }
     .DragLine {
         flex: 1;
+        min-width: 250px;
         margin-right: 0.55rem;
 
         & button {
