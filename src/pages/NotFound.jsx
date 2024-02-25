@@ -5,9 +5,11 @@ function NotFound () {
   return (
     <div className='NotFound'>
       <header>
-        <img src='/logo/min/pink.png' alt='' />
-        <h2>OOPS!</h2>
-        <h3>Page not found</h3>
+        <img src='/logo/min/pink.png' alt='Pink Blinked logo' />
+        <div className='text'>
+          <h2>OOPS!</h2>
+          <h3>Page not found</h3>
+        </div>
       </header>
       <Link to='/'>
         <h2>Go Home</h2>

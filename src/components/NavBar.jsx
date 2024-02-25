@@ -1,6 +1,6 @@
 import { NavLink } from 'react-router-dom'
 
-import './NavBar.scss'
+import './style/NavBar.scss'
 import { BsSearch, BsNutFill, BsPersonSquare } from 'react-icons/bs'
 
 function NavBar () {

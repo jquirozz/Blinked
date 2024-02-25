@@ -18,16 +18,18 @@ function App () {
     <div className='App'>
       <BrowserRouter>
         <NavBar />
-        <Routes>
-          <Route path='*' element={<NotFound />} />
-          <Route path='/' element={<Recent />} />
-          <Route path='/explore' element={<Explore />} />
-          <Route path='/profile' element={<Profile />} />
-          <Route path='/configuration' element={<Configuration />}>
-            <Route path='theme' element={<Theme />} />
-            <Route path='about' element={<About />} />
-          </Route>
-        </Routes>
+        <div className='display'>
+          <Routes>
+            <Route path='*' element={<NotFound />} />
+            <Route path='/' element={<Recent />} />
+            <Route path='/explore' element={<Explore />} />
+            <Route path='/profile' element={<Profile />} />
+            <Route path='/configuration' element={<Configuration />}>
+              <Route path='theme' element={<Theme />} />
+              <Route path='about' element={<About />} />
+            </Route>
+          </Routes>
+        </div>
       </BrowserRouter>
     </div>
   )

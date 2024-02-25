@@ -1,15 +1,24 @@
 .App {
   display: grid;
-  // auto = NavBar width: 280px
+  // Navbar 4rem
   grid-template-columns: auto 1fr;
 
-  min-height: 100svh;
+  .display {
+    overflow-y: auto;
+    height: 100dvh;
+    background: #fff;
+  }  
 }
 
 @media (max-width: 560px) {
   .App {
     grid-template-columns: auto;
     grid-template-rows: 1fr auto;
+    
+    .display {
+      // 100% - NavBar
+      height: calc(100dvh - 4rem);
+    }
 
     .NavBar {
       order: 2;

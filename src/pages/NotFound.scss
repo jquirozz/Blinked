@@ -15,12 +15,17 @@
         align-items: center;
         justify-content: center;
 
+        gap: 1rem;
+
         & img {
             width: 8rem;
         }
-        & h2 {
-            font-size: 3rem;
-            font-weight: 800;
+        .text {
+            & h2 {
+                font-size: 3rem;
+                font-weight: 800;
+            }
+            // & h3 {}
         }
     }
     & a {
