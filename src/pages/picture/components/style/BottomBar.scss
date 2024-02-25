@@ -1,0 +1,22 @@
+.BottomBar {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 0.5rem;
+    padding: 0.5rem 0.75rem;
+
+    & aside {
+        display: flex;
+        align-items: center;
+        gap: 0.25rem;
+
+        // & svg {}
+    }
+
+    // general on footer
+    & svg {
+        font-size: 1.5rem;
+        cursor: pointer;
+    }
+}

@@ -1,0 +1,21 @@
+.MainCard {
+    position: relative;
+    background: #fff;
+
+    width: 100%;
+    min-width: 280px;
+    max-width: 560px;
+
+    // TopInfo 
+    .mainImage {
+        width: 100%;
+        background: #000;
+    }
+    // BottomBar
+    & footer {
+        display: grid;
+        gap: 0.75rem;
+        padding: 0 0.5rem;
+        padding-bottom: 0.5rem;
+    }
+}

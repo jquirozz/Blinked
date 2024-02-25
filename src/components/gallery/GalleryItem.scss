@@ -6,7 +6,7 @@
 
     background: #000;
 
-    & a {
+    .toUnsplash {
         position: absolute;
         top: 0.5rem;
         left: 0.5rem;
@@ -25,8 +25,14 @@
         background: #fff;
     }
     .picture {
-        width: 100%;
         max-width: 100%;
+    }
+    // Link with the picture Id
+    .goPicture {
+        position: absolute;
+        top: 0;
+        bottom: 0;
+        width: 100%;
     }
     & footer {
         position: absolute;

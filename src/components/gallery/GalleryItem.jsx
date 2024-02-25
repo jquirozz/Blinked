@@ -7,7 +7,7 @@ import { FaUnsplash } from 'react-icons/fa'
 
 function GalleryItem ({ item }) {
   // general
-  const { alt_description, links, width, height } = item
+  const { id, alt_description, links, width, height } = item
   // image
   const { small_s3 } = item.urls
   // likes
@@ -23,14 +23,16 @@ function GalleryItem ({ item }) {
         alt={alt_description}
         style={{ aspectRatio: width / height }}
       />
-      <Link to={links.html}>
+      <Link className='goPicture' to={`/pic/${id}`} />
+
+      <Link className='toUnsplash' to={links.html}>
         <FaUnsplash />
       </Link>
       <footer>
-        <section className='user'>
+        <Link className='user' to={`/user/${username}`}>
           <img src={profile_image.small} alt={`${username} profile picture`} />
           <h3>@{username || 'username'}</h3>
-        </section>
+        </Link>
         <Like init={liked_by_user} count={likes} />
       </footer>
     </div>

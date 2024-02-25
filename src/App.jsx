@@ -9,6 +9,8 @@ import Configuration from './pages/configuration/Configuration'
 import Theme from './pages/configuration/components/Theme'
 import About from './pages/configuration/components/About'
 
+import Picture from './pages/picture/Picture'
+
 import NavBar from './components/NavBar'
 
 import './App.scss'
@@ -22,10 +24,15 @@ function App () {
           <Routes>
             <Route path='*' element={<NotFound />} />
             <Route path='/' element={<Home />} />
+
             <Route path='/explore' element={<Explore />}>
               <Route path=':search' element={null} />
             </Route>
+
+            <Route path='/pic/:id' element={<Picture />} />
+
             <Route path='/profile' element={<Profile />} />
+
             <Route path='/configuration' element={<Configuration />}>
               <Route path='theme' element={<Theme />} />
               <Route path='about' element={<About />} />

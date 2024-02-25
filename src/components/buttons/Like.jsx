@@ -1,4 +1,6 @@
 import { useState } from 'react'
+
+import './Like.scss'
 import { FaHeart, FaRegHeart } from 'react-icons/fa'
 
 function Like ({ init }) {
@@ -9,9 +11,9 @@ function Like ({ init }) {
   }
 
   return (
-    <section className='Like' onClick={handleLike}>
+    <button className='Like' onClick={handleLike}>
       {liked ? <FaHeart fill='#f4346d' /> : <FaRegHeart />}
-    </section>
+    </button>
   )
 }
 

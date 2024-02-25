@@ -1,9 +1,9 @@
-import { useRef, useState } from 'react'
+import { useState } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { useDraggable } from 'react-use-draggable-scroll'
 
 import './Navigation.scss'
 import { BsSearch } from 'react-icons/bs'
+import DragLine from '../../../components/DragLine'
 
 const TAGS = [
   '3D Renders',
@@ -22,9 +22,6 @@ const TAGS = [
 
 function Navigation ({ search, setSearch, setPage }) {
   const [input, setInput] = useState('')
-
-  const tagsRef = useRef()
-  const { events } = useDraggable(tagsRef)
 
   const navigate = useNavigate()
 
@@ -61,13 +58,13 @@ function Navigation ({ search, setSearch, setPage }) {
           <BsSearch />
         </button>
       </form>
-      <aside ref={tagsRef} {...events}>
+      <DragLine>
         {TAGS.map((tag, key) => (
           <button key={key} onClick={() => handleTagClick(tag)}>
             {tag}
           </button>
         ))}
-      </aside>
+      </DragLine>
     </div>
   )
 }

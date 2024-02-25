@@ -1,0 +1,11 @@
+.DragLine .tag {
+    color: #fff;
+    background: #000;
+
+    font-size: 0.75rem;
+
+    &:hover {
+        color: #000;
+        background: #f4346d;
+    }
+}
