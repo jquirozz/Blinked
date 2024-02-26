@@ -29,7 +29,7 @@ function Menu ({ item, setMenu }) {
     {
       text: 'Copy link',
       isLink: false,
-      function: copyUrl(location),
+      function: () => copyUrl(location),
       svg: <FaLink />
     },
     {
@@ -42,7 +42,7 @@ function Menu ({ item, setMenu }) {
 
   return (
     <div className='Menu' onClick={() => setMenu(false)}>
-      <header className='aaa'>
+      <header>
         {INFO.map((i, key) => (
           <div className='show' key={key}>
             {i.svg}
@@ -60,12 +60,7 @@ function Menu ({ item, setMenu }) {
             <h3>{i.text}</h3>
           </Link>
         ) : (
-          <button
-            onClick={() => {
-              i.function
-            }}
-            key={key}
-          >
+          <button onClick={i.function} key={key}>
             {i.svg}
             <h3>{i.text}</h3>
           </button>

@@ -4,7 +4,7 @@
     align-items: center;
     justify-content: space-between;
 
-    width: 4rem;
+    width: 3.75rem;
     height: 100svh;
 
     padding: 1rem 0.5rem;
@@ -28,7 +28,7 @@
                 height: 2.75rem;
             }
             & svg {
-                font-size: 1.75rem;
+                font-size: 1.5rem;
             }
         }
         .active {
@@ -60,7 +60,7 @@
 
             & a {
                 flex: 1;
-                
+
                 display: grid;
                 place-items: center;
             }

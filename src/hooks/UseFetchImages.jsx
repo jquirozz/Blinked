@@ -42,7 +42,7 @@ function UseFetchImages ({ fetchBy, id, query, page, order }) {
     fetchPhotos()
   }, [fetchPhotos])
 
-  return { item, images, maxPage, error, loading }
+  return { item, images, maxPage, error, loading, setItem, setImages }
 }
 
 export default UseFetchImages
