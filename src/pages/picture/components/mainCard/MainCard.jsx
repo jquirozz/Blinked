@@ -1,11 +1,5 @@
 import { useEffect, useState } from 'react'
 
-import UseFetchImages from '../../../../hooks/UseFetchImages'
-import { fetchById } from '../../../../services/fetchById'
-
-import Loading from '../../../../components/Loading'
-import NotFound from '../../../NotFound'
-
 import TopInfo from './TopInfo'
 import Menu from './Menu'
 import BottomBar from './BottomBar'
@@ -14,12 +8,15 @@ import Tags from './Tags'
 
 import './style/MainCard.scss'
 
-function MainCard ({ id, setTopic }) {
+function MainCard ({ item, setTopic }) {
   const [menu, setMenu] = useState()
-  const { item, error, loading } = UseFetchImages({
-    id,
-    fetchBy: fetchById
-  })
+
+  // general
+  const { width, height, description, alt_description, tags } = item
+  // user
+  const { username } = item.user
+  // images
+  const { small_s3 } = item.urls
 
   useEffect(() => {
     const newTags = item?.tags
@@ -28,16 +25,6 @@ function MainCard ({ id, setTopic }) {
       setTopic(first.title)
     }
   }, [setTopic, item])
-
-  if (loading) return <Loading />
-  if (error) return <NotFound />
-
-  // general
-  const { width, height, description, alt_description, tags } = item
-  // user
-  const { username } = item.user
-  // images
-  const { small_s3 } = item.urls
 
   return (
     <section className='MainCard'>
