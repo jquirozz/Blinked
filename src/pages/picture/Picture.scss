@@ -1,9 +1,9 @@
 .Picture {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    place-items: center;
+
+    gap: 10px;
 
     overflow-y: auto;
     height: 100%;
-
-    background: #f4346d;
 }

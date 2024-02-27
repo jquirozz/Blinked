@@ -1,7 +1,7 @@
 import { Link, useLocation } from 'react-router-dom'
 
-import { abrNum } from '../../../services/abrNum.js'
-import { copyUrl } from '../../../services/copyUrl.js'
+import { abrNum } from '../../../../services/abrNum.js'
+import { copyUrl } from '../../../../services/copyUrl.js'
 
 import './style/Menu.scss'
 import { FaUnsplash, FaRegEye, FaRegHeart } from 'react-icons/fa'

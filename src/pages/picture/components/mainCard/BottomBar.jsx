@@ -1,6 +1,6 @@
 import { saveAs } from 'file-saver'
 
-import Like from '../../../components/buttons/Like'
+import Like from '../../../../components/buttons/Like'
 
 import './style/BottomBar.scss'
 import { BiSolidDownload } from 'react-icons/bi'

@@ -1,30 +1,19 @@
-import { useState } from 'react'
 import { useParams } from 'react-router-dom'
 
-import UseFetchImages from '../../hooks/UseFetchImages'
-import { fetchById } from '../../services/fetchById'
-
-import Loading from '../../components/Loading'
-import NotFound from '../NotFound'
-
-import MainCard from './components/MainCard'
+import MainCard from './components/mainCard/MainCard'
 
 import './Picture.scss'
+import RelatedImages from './components/relatedImages/RelatedImages'
+import { useState } from 'react'
 
 function Picture () {
   const { id } = useParams()
-  const [menu, setMenu] = useState()
-  const { item, error, loading } = UseFetchImages({
-    id,
-    fetchBy: fetchById
-  })
-
-  if (loading) return <Loading />
-  if (error) return <NotFound />
+  const [topic, setTopic] = useState('')
 
   return (
     <div className='Picture'>
-      <MainCard item={item} menu={menu} setMenu={setMenu} />
+      <MainCard id={id} setTopic={setTopic} />
+      <RelatedImages topic={topic} />
     </div>
   )
 }
