@@ -5,6 +5,10 @@
     gap: 10px;
     padding: 10px;
 
+    .GalleryItem:nth-last-child(1) {
+        margin-bottom: 0;
+    }
+
     & header {
         column-gap: 10px;
         column-count: 1;
