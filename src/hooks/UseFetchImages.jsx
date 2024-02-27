@@ -5,7 +5,7 @@ function UseFetchImages ({ fetchBy, id, query, page, order }) {
   const [item, setItem] = useState({}) // One Picture
   const [images, setImages] = useState([]) // Array of images
 
-  const [maxPage, setMaxPage] = useState(false)
+  const [maxPage, setMaxPage] = useState(null)
   const [error, setError] = useState(false)
   const [loading, setLoading] = useState(true)
 

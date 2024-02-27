@@ -1,5 +1,6 @@
 .Gallery {
     display: grid;
+    place-items: center;
 
     & header {
         column-gap: 10px;
