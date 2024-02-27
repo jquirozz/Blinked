@@ -2,6 +2,9 @@
     display: grid;
     place-items: center;
 
+    gap: 10px;
+    padding: 10px;
+
     & header {
         column-gap: 10px;
         column-count: 1;

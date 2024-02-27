@@ -25,7 +25,7 @@ function Explore () {
     })
 
   useEffect(() => {
-    setSearch(search || param_search)
+    setSearch(param_search || search)
 
     // Reset image arrays
     setItem([])

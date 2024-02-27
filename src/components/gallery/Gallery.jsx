@@ -11,7 +11,7 @@ function Gallery ({ array, page, maxPage, setPage }) {
           <GalleryItem item={item} key={key} />
         ))}
       </header>
-      {page && maxPage & setPage && (
+      {page && maxPage && (
         <Pagination page={page} maxPage={maxPage} setPage={setPage} />
       )}
     </div>
