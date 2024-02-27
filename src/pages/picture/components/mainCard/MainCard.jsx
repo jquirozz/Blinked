@@ -29,7 +29,7 @@ function MainCard ({ id, setTopic }) {
     }
   }, [setTopic, item])
 
-  if (loading) return <Loading />
+  if (!loading) return <Loading />
   if (error) return <NotFound />
 
   // general

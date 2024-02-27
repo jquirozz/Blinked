@@ -4,7 +4,7 @@ import { fetchByQuery } from '../../../../services/fetchByQuery'
 import Gallery from '../../../../components/gallery/Gallery'
 
 import Loading from '../../../../components/Loading'
-import NotFound from '../../../NotFound'
+import NotFound from '../../../../pages/NotFound'
 
 import './RelatedImages.scss'
 
@@ -15,8 +15,8 @@ function RelatedImages ({ topic }) {
     fetchBy: fetchByQuery
   })
 
-  if (loading) return <Loading />
   if (error) return <NotFound />
+  if (!loading) return <Loading />
 
   return (
     <div className='RelatedImages'>
