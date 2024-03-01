@@ -1,18 +1,14 @@
 import { Link } from 'react-router-dom'
+import { FaUnsplash } from 'react-icons/fa'
 
 import Like from '../buttons/Like'
 
 import './GalleryItem.scss'
-import { FaUnsplash } from 'react-icons/fa'
 
 function GalleryItem ({ item }) {
-  // general
   const { id, alt_description, links, width, height } = item
-  // image
   const { small_s3 } = item.urls
-  // likes
   const { liked_by_user, likes } = item
-  // user
   const { profile_image, username } = item.user
 
   return (
@@ -21,7 +17,7 @@ function GalleryItem ({ item }) {
         className='picture'
         src={small_s3}
         alt={alt_description}
-        style={{ aspectRatio: width / height }}
+        style={{ aspectRatio: width / height, width: '100%' }}
       />
       <Link className='goPicture' to={`/pic/${id}`} />
 

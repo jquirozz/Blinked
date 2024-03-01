@@ -17,7 +17,8 @@
         // 100svh - topBar - bottomBar - padding
         max-height: calc(100svh - 3.5rem - 3rem - 10px);
         object-fit: cover;
-        background: #fff;
+        
+        background: #000;
     }
     // .BottomBar
     .cardFooter {

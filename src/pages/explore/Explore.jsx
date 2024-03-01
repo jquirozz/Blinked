@@ -16,21 +16,14 @@ function Explore () {
   const { search: param_search } = useParams()
   const [page, setPage] = useState(1)
   const [search, setSearch] = useState('')
-  const { images, maxPage, error, loading, setItem, setImages } =
-    UseFetchImages({
-      query: search,
-      page,
-      order: 'popular',
-      fetchBy: fetchByQuery
-    })
+  const { images, maxPage, error, loading } = UseFetchImages({
+    query: search,
+    page
+  })
 
   useEffect(() => {
-    setSearch(param_search || search)
-
-    // Reset image arrays
-    setItem([])
-    setImages([])
-  }, [search, setItem, setImages, param_search])
+    setSearch(param_search || '')
+  }, [param_search])
 
   if (loading) return <Loading />
   if (error) return <NotFound />
@@ -38,7 +31,14 @@ function Explore () {
   return (
     <div className='Explore'>
       <Navigation search={search} setSearch={setSearch} setPage={setPage} />
-      <Gallery array={images} page={page} maxPage={maxPage} setPage={setPage} />
+      {!loading && images && (
+        <Gallery
+          array={images}
+          page={page}
+          maxPage={maxPage}
+          setPage={setPage}
+        />
+      )}
     </div>
   )
 }

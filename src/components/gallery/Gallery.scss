@@ -3,13 +3,13 @@
     place-items: center;
 
     gap: 10px;
-    padding: 10px;
+    
+    width: 100%;
+    min-height: 500px;
 
-    .GalleryItem:nth-last-child(1) {
-        margin-bottom: 0;
-    }
-
+    // Images
     & header {
+        width: 100%;
         column-gap: 10px;
         column-count: 1;
 
@@ -25,5 +25,9 @@
                 }
             }
         }
+    }
+
+    .GalleryItem:nth-last-child(1) {
+        margin-bottom: 0;
     }
 }

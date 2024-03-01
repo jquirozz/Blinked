@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 
 import TopInfo from './TopInfo'
 import Menu from './Menu'
@@ -8,7 +8,7 @@ import Tags from './Tags'
 
 import './style/MainCard.scss'
 
-function MainCard ({ item, setTopic }) {
+function MainCard ({ item }) {
   const [menu, setMenu] = useState()
 
   // general
@@ -17,14 +17,6 @@ function MainCard ({ item, setTopic }) {
   const { username } = item.user
   // images
   const { small_s3 } = item.urls
-
-  useEffect(() => {
-    const newTags = item?.tags
-    if (newTags && newTags.length > 0) {
-      const first = newTags[0]
-      setTopic(first.title)
-    }
-  }, [setTopic, item])
 
   return (
     <section className='MainCard'>

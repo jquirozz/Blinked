@@ -4,31 +4,28 @@
     display: grid;
     margin-bottom: 10px;
 
-    max-width: 400px;
-
     background: #000;
 
     .toUnsplash {
         position: absolute;
         top: 0.5rem;
         left: 0.5rem;
-
+        
         display: grid;
         place-items: center;
-
+        
         width: 2rem;
         aspect-ratio: 1;
-
+        
         overflow: hidden;
         border-radius: 50%;
-
+        
         cursor: pointer;
-
+        
         background: #fff;
     }
     .picture {
         width: 100%;
-        max-width: 100%;
     }
     // Link with image id
     .goPicture {
