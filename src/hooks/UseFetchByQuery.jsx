@@ -1,8 +1,7 @@
 import { useEffect, useState } from 'react'
 import { fetchByQuery } from '../services/fetchByQuery'
 
-function UseFetchImages ({ fetchBy, id, query, page, order }) {
-  const [item, setItem] = useState({}) // One Picture
+function useFetchByQuery ({ query, page, order }) {
   const [images, setImages] = useState([]) // Array of images
 
   const [maxPage, setMaxPage] = useState(null)
@@ -12,17 +11,13 @@ function UseFetchImages ({ fetchBy, id, query, page, order }) {
   useEffect(() => {
     const fetchPhotos = async () => {
       try {
-        let res = fetchBy
-          ? await fetchBy({ id, query, page, order })
-          : await fetchByQuery({ query, page, order })
+        let res = fetchByQuery({ query, page, order })
         if (res.errors) throw new Error('Error occurred: ' + res.errors[0])
 
         if (res.response.results) {
           const { results, total_pages } = res.response
           setImages(results)
           setMaxPage(total_pages)
-        } else {
-          setItem(res.response)
         }
       } catch (error) {
         console.error(error)
@@ -35,14 +30,13 @@ function UseFetchImages ({ fetchBy, id, query, page, order }) {
 
     return () => {
       // Reset values when unmounting
-      setItem({})
       setImages([])
       setLoading(true)
       setError(false)
     }
   }, [id, query, order, page, fetchBy])
 
-  return { item, images, maxPage, error, loading }
+  return { images, maxPage, error, loading }
 }
 
-export default UseFetchImages
+export default useFetchByQuery
