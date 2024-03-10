@@ -1,0 +1,35 @@
+.SearchBar {
+    --borderRadius: 20px;
+
+    display: grid;
+    grid-template-columns: 6fr 1fr;
+
+    overflow: hidden;
+
+    border-radius: var(--borderRadius);
+
+    background: #f5f5f5;
+
+    & input {
+        padding: 0.5rem 0.75rem;
+        background-color: transparent;
+    }
+    & button {
+        display: grid;
+        place-items: center;
+
+        padding: 0 0.75rem;
+
+        border-top-left-radius: var(--borderRadius);
+        border-bottom-left-radius: var(--borderRadius);
+
+        & svg {
+            font-size: 1.2rem;
+        }
+    }
+    &:has(input:focus) {
+        & button {
+            background: var(--main);
+        }
+    }
+}
