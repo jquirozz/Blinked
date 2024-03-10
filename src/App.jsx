@@ -23,8 +23,14 @@ function App () {
         <div className='display'>
           <Routes>
             <Route path='*' element={<NotFound />} />
-            <Route path='/' element={<Home topic={topic} />} />
-            <Route path='/search/:query' element={<Home topic={topic} />} />
+            <Route
+              path='/'
+              element={<Home topic={topic} page={page} setPage={setPage} />}
+            />
+            <Route
+              path='/search/:query'
+              element={<Home topic={topic} page={page} setPage={setPage} />}
+            />
           </Routes>
         </div>
       </BrowserRouter>

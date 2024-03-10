@@ -8,7 +8,7 @@ import NotFound from '../NotFound'
 import './Home.scss'
 import Gallery from '../../components/Gallery'
 
-function Home ({ topic, page }) {
+function Home ({ topic, page, setPage }) {
   const { images, maxPage, error, loading } = useFetchByQuery({
     query: topic,
     page
@@ -23,7 +23,7 @@ function Home ({ topic, page }) {
 
   return (
     <div className='Home'>
-      <Gallery images={images} />
+      <Gallery images={images} page={page} setPage={setPage} maxPage={maxPage} />
     </div>
   )
 }

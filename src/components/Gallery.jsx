@@ -1,7 +1,10 @@
 import { Link } from 'react-router-dom'
+
+import Pagination from './Pagination'
+
 import './style/Gallery.scss'
 
-function Gallery ({ images }) {
+function Gallery ({ images, page, setPage, maxPage }) {
   return (
     <div className='Gallery'>
       <header>
@@ -11,7 +14,9 @@ function Gallery ({ images }) {
           </Link>
         ))}
       </header>
-      <footer>Pagination</footer>
+      <footer>
+        <Pagination page={page} setPage={setPage} maxPage={maxPage} />
+      </footer>
     </div>
   )
 }
