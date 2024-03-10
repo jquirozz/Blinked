@@ -1,4 +1,12 @@
 .App {
   display: grid;
+  place-items: center;
   grid-template-rows: auto 1fr;
+
+  margin: auto;
+  max-width: 1000px;
+
+  .display {
+    width: 100%;
+  }
 }

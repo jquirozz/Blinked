@@ -23,7 +23,8 @@ function App () {
         <div className='display'>
           <Routes>
             <Route path='*' element={<NotFound />} />
-            <Route path='/' element={<Home />} />
+            <Route path='/' element={<Home topic={topic} />} />
+            <Route path='/search/:query' element={<Home topic={topic} />} />
           </Routes>
         </div>
       </BrowserRouter>

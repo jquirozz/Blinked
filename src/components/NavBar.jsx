@@ -8,7 +8,7 @@ import { FaUnsplash } from 'react-icons/fa6'
 import { IoMenu, IoClose } from 'react-icons/io5'
 
 function NavBar ({ topic, setTopic, setPage }) {
-  const [show, setShow] = useState(false)
+  const [show, setShow] = useState(true)
 
   const handleMenu = () => setShow(!show)
 
@@ -16,6 +16,8 @@ function NavBar ({ topic, setTopic, setPage }) {
     const handleResize = () => {
       if (window.innerWidth > 650) {
         setShow(true) // Show the list when screen is wide
+      } else {
+        setShow(false) // Show the list when screen is wide
       }
     }
     window.addEventListener('resize', handleResize)
