@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // Pages
 import NotFound from './pages/NotFound'
 import Home from './pages/home/Home'
+import Single from './pages/single/Single'
 
 // Components
 import NavBar from './components/NavBar'
@@ -31,6 +32,7 @@ function App () {
               path='/search/:query'
               element={<Home topic={topic} page={page} setPage={setPage} />}
             />
+            <Route path='/id/:id' element={<Single />} />
           </Routes>
         </div>
       </BrowserRouter>
