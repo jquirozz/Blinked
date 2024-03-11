@@ -8,7 +8,7 @@
 
     & img {
         flex: 1;
-        max-width: 125px;
+        max-width: 100px;
         width: 100%;
 
         border: 1px solid #222;
@@ -59,7 +59,6 @@
             gap: 0.25rem;
 
             .name {
-                text-transform: uppercase;
                 font-size: 1rem;
                 font-weight: 700;
             }

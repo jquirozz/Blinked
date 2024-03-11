@@ -9,6 +9,27 @@ function ConectionButtons ({ user }) {
 
   const handleFollow = () => setFollowing(!following)
 
+  const LINKS = [
+    {
+      text: 'instagram',
+      url: `https://www.instagram.com/${user.instagram_username}`,
+      svg: <FaInstagram />,
+      check: user.instagram_username
+    },
+    {
+      text: 'twitter',
+      url: `https://twitter.com/${user.twitter_username}`,
+      svg: <FaXTwitter />,
+      check: user.twitter_username
+    },
+    {
+      text: 'portfolio',
+      url: user.portfolio_url,
+      svg: <FaRegFolder />,
+      check: user.portfolio_url
+    }
+  ]
+
   return (
     <section className='ConectionButtons'>
       <button
@@ -17,39 +38,20 @@ function ConectionButtons ({ user }) {
       >
         <h4>{following ? 'Unfollow' : 'Follow'}</h4>
       </button>
-      {user.instagram_username && (
-        <Link
-          to={`https://www.instagram.com/${user.instagram_username}`}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='instagram'
-        >
-          <FaInstagram />
-          <h4>Instagram</h4>
-        </Link>
-      )}
-      {user.twitter_username && (
-        <Link
-          to={`https://twitter.com/${user.twitter_username}`}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='twitter'
-        >
-          <FaXTwitter />
-          <h4>Twitter</h4>
-        </Link>
-      )}
-      {user.portfolio_url && (
-        <Link
-          to={user.portfolio_url}
-          target='_blank'
-          rel='noopener noreferrer'
-          className='twitter'
-        >
-          <FaRegFolder />
-          <h4>Portfolio</h4>
-        </Link>
-      )}
+      {LINKS.map(({ check, url, svg }) => (
+        <>
+          {check && (
+            <Link
+              to={url}
+              target='_blank'
+              rel='noopener noreferrer'
+              className='twitter'
+            >
+              {svg}
+            </Link>
+          )}
+        </>
+      ))}
     </section>
   )
 }
