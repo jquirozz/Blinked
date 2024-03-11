@@ -28,7 +28,7 @@ function Single () {
   return (
     <div className='Single'>
       <header className='user'>
-        <Link to={`/user/${item.user?.id}`} className='userMain'>
+        <Link to={`/user/${item.user?.username}`} className='userMain'>
           <div className='pfp'>
             <img
               src={item.user?.profile_image?.small}
@@ -58,9 +58,11 @@ function Single () {
           <h3 className='likesCount'>
             {abrNum(item.likes, 1)} likes · {abrNum(item.views, 1)} views
           </h3>
-          <p className='description'>
-            {item.description || item.alt_description}
-          </p>
+          {(item.description || item.alt_description) && (
+            <p className='description'>
+              {item.description || item.alt_description}
+            </p>
+          )}
           <h6 className='date'>Uploaded on {date}</h6>
         </section>
       </footer>

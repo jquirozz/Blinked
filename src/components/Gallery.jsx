@@ -14,9 +14,11 @@ function Gallery ({ images, page, setPage, maxPage }) {
           </Link>
         ))}
       </header>
-      <footer>
-        <Pagination page={page} setPage={setPage} maxPage={maxPage} />
-      </footer>
+      {maxPage > 1 && (
+        <footer>
+          <Pagination page={page} setPage={setPage} maxPage={maxPage} />
+        </footer>
+      )}
     </div>
   )
 }

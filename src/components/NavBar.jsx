@@ -1,4 +1,4 @@
-import { useEffect, useState } from 'react'
+import { useState } from 'react'
 import { NavLink, Link } from 'react-router-dom'
 
 import SearchBar from './SearchBar'
@@ -11,24 +11,14 @@ function NavBar ({ topic, setTopic, setPage }) {
   const [show, setShow] = useState(true)
 
   const handleMenu = () => setShow(!show)
-
-  useEffect(() => {
-    const handleResize = () => {
-      if (window.innerWidth > 650) {
-        setShow(true) // Show the list when screen is wide
-      } else {
-        setShow(false) // Show the list when screen is wide
-      }
-    }
-    window.addEventListener('resize', handleResize)
-    return () => {
-      window.removeEventListener('resize', handleResize)
-    }
-  }, [])
+  const handleGoHome = () => {
+    setTopic('')
+    setPage(1)
+  }
 
   return (
     <nav className='NavBar'>
-      <Link to='/' className='title'>
+      <Link to='/' className='title' onClick={handleGoHome}>
         <img src='/logo/white.png' alt='Blinked logo' />
       </Link>
 

@@ -5,6 +5,7 @@ import { BrowserRouter, Routes, Route } from 'react-router-dom'
 // Pages
 import NotFound from './pages/NotFound'
 import Home from './pages/home/Home'
+import User from './pages/user/User'
 import Single from './pages/single/Single'
 
 // Components
@@ -46,6 +47,7 @@ function App () {
                 />
               }
             />
+            <Route path='/user/:username' element={<User />} />
             <Route path='/id/:id' element={<Single />} />
           </Routes>
         </div>

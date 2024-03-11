@@ -1,7 +1,13 @@
 .Gallery {
     width: 100%;
-    max-width: 700px;
+    max-width: 650px;
+
     padding: 0.25rem;
+    padding-bottom: 0;
+
+    border-radius: 10px;
+
+    background: #111;
 
     & header {
         display: grid;
