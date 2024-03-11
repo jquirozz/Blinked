@@ -13,19 +13,19 @@ function ConectionButtons ({ user }) {
     {
       text: 'instagram',
       url: `https://www.instagram.com/${user.instagram_username}`,
-      svg: <FaInstagram />,
+      svg: <FaInstagram size={24} />,
       check: user.instagram_username
     },
     {
       text: 'twitter',
       url: `https://twitter.com/${user.twitter_username}`,
-      svg: <FaXTwitter />,
+      svg: <FaXTwitter size={20} />,
       check: user.twitter_username
     },
     {
       text: 'portfolio',
       url: user.portfolio_url,
-      svg: <FaRegFolder />,
+      svg: <FaRegFolder size={22} />,
       check: user.portfolio_url
     }
   ]
