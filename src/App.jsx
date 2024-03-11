@@ -26,11 +26,25 @@ function App () {
             <Route path='*' element={<NotFound />} />
             <Route
               path='/'
-              element={<Home topic={topic} page={page} setPage={setPage} />}
+              element={
+                <Home
+                  topic={topic}
+                  setTopic={setTopic}
+                  page={page}
+                  setPage={setPage}
+                />
+              }
             />
             <Route
               path='/search/:query'
-              element={<Home topic={topic} page={page} setPage={setPage} />}
+              element={
+                <Home
+                  topic={topic}
+                  setTopic={setTopic}
+                  page={page}
+                  setPage={setPage}
+                />
+              }
             />
             <Route path='/id/:id' element={<Single />} />
           </Routes>

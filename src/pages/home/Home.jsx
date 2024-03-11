@@ -1,4 +1,5 @@
 import { useEffect } from 'react'
+import { useParams } from 'react-router'
 
 import useFetchByQuery from '../../hooks/UseFetchByQuery'
 
@@ -8,11 +9,19 @@ import NotFound from '../NotFound'
 import './Home.scss'
 import Gallery from '../../components/Gallery'
 
-function Home ({ topic, page, setPage }) {
+function Home ({ topic, setTopic, page, setPage }) {
   const { images, maxPage, error, loading } = useFetchByQuery({
     query: topic,
     page
   })
+  const { query } = useParams()
+
+  useEffect(() => {
+    if (query) {
+      setPage(1)
+      setTopic(query)
+    }
+  }, [setTopic, query, setPage])
 
   useEffect(() => {
     console.log(images, maxPage, error, loading)
@@ -23,7 +32,12 @@ function Home ({ topic, page, setPage }) {
 
   return (
     <div className='Home'>
-      <Gallery images={images} page={page} setPage={setPage} maxPage={maxPage} />
+      <Gallery
+        images={images}
+        page={page}
+        setPage={setPage}
+        maxPage={maxPage}
+      />
     </div>
   )
 }

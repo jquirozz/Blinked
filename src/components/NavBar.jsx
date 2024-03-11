@@ -29,7 +29,7 @@ function NavBar ({ topic, setTopic, setPage }) {
   return (
     <nav className='NavBar'>
       <Link to='/' className='title'>
-        <h1>BLINKED</h1>
+        <img src='/public/logo/white.png' alt='' />
       </Link>
 
       <SearchBar topic={topic} setTopic={setTopic} setPage={setPage} />

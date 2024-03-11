@@ -3,16 +3,14 @@
     flex-direction: column;
 
     width: 100%;
-    max-width: 400px;
+    max-width: 450px;
 
-    margin-top: 0.25rem;
-    margin-bottom: 0.25rem;
+    margin-top: 2px;
+    margin-bottom: 2px;
 
     overflow: hidden;
     border: 1px solid #222;
     border-radius: 10px;
-
-    background: #000;
 
     .user {
         display: flex;
@@ -34,6 +32,7 @@
                 width: 2rem;
                 aspect-ratio: 1;
                 overflow: hidden;
+
                 border-radius: 50%;
 
                 background: #111;
@@ -55,7 +54,6 @@
 
             & svg {
                 transition: color 150ms ease-in-out;
-                color: #fff;
                 font-size: 1.5rem;
             }
             &:hover > svg {
@@ -90,6 +88,9 @@
             .description {
                 font-size: 1rem;
                 font-weight: 400;
+
+                user-select: text;
+
                 &::first-letter {
                     text-transform: capitalize;
                 }

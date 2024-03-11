@@ -1,9 +1,7 @@
 .App {
   display: grid;
-  place-items: center;
   grid-template-rows: auto 1fr;
-  
-  margin: auto;
+
   min-height: 100svh;
 
   .display {
@@ -11,8 +9,10 @@
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    
-    padding: 0 0.25rem;
+
+    @media (max-width: 650px) {
+      justify-content: flex-start;
+    }
 
     width: 100%;
   }

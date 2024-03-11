@@ -8,6 +8,7 @@
 
     overflow: hidden;
 
+    border: 1px solid #888;
     border-radius: var(--borderRadius);
 
     background: #f5f5f5;
@@ -26,10 +27,13 @@
         border-bottom-left-radius: var(--borderRadius);
 
         & svg {
+            color: #000;
             font-size: 1.2rem;
         }
     }
     &:has(input:focus) {
+        border: 1px solid var(--main);
+
         & button {
             background: var(--main);
         }
