@@ -1,8 +1,10 @@
 .SearchBar {
     --borderRadius: 20px;
 
+    flex: 1;
+
     display: grid;
-    grid-template-columns: 6fr 1fr;
+    grid-template-columns: 6fr auto;
 
     overflow: hidden;
 

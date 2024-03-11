@@ -10,6 +10,7 @@ import Loading from '../../components/Loading'
 import NotFound from '../NotFound'
 
 import './Single.scss'
+import { FaUnsplash } from 'react-icons/fa6'
 import { CiMenuKebab } from 'react-icons/ci'
 
 function Single () {
@@ -36,9 +37,14 @@ function Single () {
           </div>
           <h2>{item.user?.username}</h2>
         </Link>
-        <aside className='options'>
-          <CiMenuKebab />
-        </aside>
+        <Link
+          to={`https://unsplash.com/@${item.user?.username}`}
+          target='_blank'
+          rel='noopener noreferrer'
+          className='toUnsplash'
+        >
+          <FaUnsplash />
+        </Link>
       </header>
       <img
         className='image'

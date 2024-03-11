@@ -4,7 +4,10 @@
 
     width: 100%;
     max-width: 400px;
-    
+
+    margin-top: 0.25rem;
+    margin-bottom: 0.25rem;
+
     overflow: hidden;
     border: 1px solid #222;
     border-radius: 10px;
@@ -17,6 +20,7 @@
         justify-content: space-between;
 
         padding: 0.75rem;
+        padding-right: 1rem;
         border-bottom: 1px solid #111;
 
         .userMain {
@@ -45,12 +49,17 @@
                 font-weight: 600;
             }
         }
-        .options {
+        .toUnsplash {
             display: grid;
             place-items: center;
 
             & svg {
-                font-size: 1.25rem;
+                transition: color 150ms ease-in-out;
+                color: #fff;
+                font-size: 1.5rem;
+            }
+            &:hover > svg {
+                color: var(--main);
             }
         }
     }
