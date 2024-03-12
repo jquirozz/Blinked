@@ -48,13 +48,15 @@
 
                 border-radius: 20px;
 
+                color: #000;
                 background: var(--main);
-
+                
                 & h3 {
                     font-size: 0.9rem;
                     font-weight: 500;
                 }
                 & svg {
+                    color: #000;
                 }
             }
             .pfp {

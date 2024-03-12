@@ -8,6 +8,7 @@ import NotFound from '../NotFound'
 
 import './Home.scss'
 import Gallery from '../../components/Gallery'
+import PopularTags from './components/PopularTags'
 
 function Home ({ topic, setTopic, page, setPage }) {
   const { images, maxPage, error, loading } = useFetchByQuery({
@@ -32,6 +33,7 @@ function Home ({ topic, setTopic, page, setPage }) {
 
   return (
     <div className='Home'>
+      <PopularTags />
       <Gallery
         images={images}
         page={page}

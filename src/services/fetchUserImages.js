@@ -8,7 +8,7 @@ export const fetchUserImages = async ({ username, page }) => {
     const response = await unsplash.users.getPhotos({
       username,
       page,
-      perPage: 24,
+      perPage: 28,
       order_by: 'popular'
     })
     return response

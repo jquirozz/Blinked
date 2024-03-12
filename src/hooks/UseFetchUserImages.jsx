@@ -18,7 +18,7 @@ function useFetchUserImages ({ username, page, order }) {
 
         const { results, total } = res.response
         setImages(results)
-        setMaxPage(Math.floor(total / 24) + 1)
+        setMaxPage(Math.floor(total / 28) + 1)
       } catch (error) {
         console.error(error)
         setError(true)

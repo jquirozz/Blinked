@@ -13,7 +13,7 @@ export const fetchByQuery = async ({ query = '', page = 1 }) => {
     const response = await unsplash.search.getPhotos({
       query: searchQuery,
       page,
-      perPage: 24,
+      perPage: 28,
       order_by: 'popular'
     })
     return response
