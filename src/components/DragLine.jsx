@@ -1,7 +1,7 @@
 import { useRef } from 'react'
 import { useDraggable } from 'react-use-draggable-scroll'
 
-import './DragLine.scss'
+import './style/DragLine.scss'
 
 function DragLine ({ children }) {
   const ref = useRef()

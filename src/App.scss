@@ -1,27 +1,14 @@
 .App {
   display: grid;
-  // Navbar 4rem
-  grid-template-columns: auto 1fr;
+  grid-template-rows: auto 1fr;
+
+  min-height: 100svh;
 
   .display {
-    overflow-y: auto;
-    height: 100dvh;
-    background: #fff;
-  }  
-}
+    display: flex;
+    flex-direction: column;
 
-@media (max-width: 560px) {
-  .App {
-    grid-template-columns: auto;
-    grid-template-rows: 1fr auto;
-    
-    .display {
-      // 100% - NavBar
-      height: calc(100dvh - 3.75rem);
-    }
-
-    .NavBar {
-      order: 2;
-    }
+    overflow: hidden;
+    width: 100%;
   }
 }

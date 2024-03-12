@@ -1,42 +1,54 @@
+// Modules
+import { useState } from 'react'
 import { BrowserRouter, Routes, Route } from 'react-router-dom'
 
+// Pages
 import NotFound from './pages/NotFound'
 import Home from './pages/home/Home'
-import Explore from './pages/explore/Explore'
-import Profile from './pages/profile/Profile'
+import User from './pages/user/User'
+import Single from './pages/single/Single'
 
-import Configuration from './pages/configuration/Configuration'
-import Theme from './pages/configuration/components/Theme'
-import About from './pages/configuration/components/About'
-
-import Picture from './pages/picture/Picture'
-
+// Components
 import NavBar from './components/NavBar'
 
+// Style
 import './App.scss'
 
 function App () {
+  const [topic, setTopic] = useState('')
+  const [page, setPage] = useState(1)
+
   return (
     <div className='App'>
       <BrowserRouter>
-        <NavBar />
+        <NavBar topic={topic} setTopic={setTopic} setPage={setPage} />
         <div className='display'>
           <Routes>
             <Route path='*' element={<NotFound />} />
-            <Route path='/' element={<Home />} />
-
-            <Route path='/explore' element={<Explore />}>
-              <Route path=':search' element={null} />
-            </Route>
-
-            <Route path='/pic/:id' element={<Picture />} />
-
-            <Route path='/profile' element={<Profile />} />
-
-            <Route path='/configuration' element={<Configuration />}>
-              <Route path='theme' element={<Theme />} />
-              <Route path='about' element={<About />} />
-            </Route>
+            <Route
+              path='/'
+              element={
+                <Home
+                  topic={topic}
+                  setTopic={setTopic}
+                  page={page}
+                  setPage={setPage}
+                />
+              }
+            />
+            <Route
+              path='/search/:query'
+              element={
+                <Home
+                  topic={topic}
+                  setTopic={setTopic}
+                  page={page}
+                  setPage={setPage}
+                />
+              }
+            />
+            <Route path='/user/:username' element={<User />} />
+            <Route path='/id/:id' element={<Single />} />
           </Routes>
         </div>
       </BrowserRouter>

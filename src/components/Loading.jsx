@@ -1,9 +1,13 @@
-import './Loading.scss'
+import './style/Loading.scss'
 
 function Loading () {
   return (
     <div className='Loading'>
-      <img src='/logo/min/pink.png' alt='Pink Blinked logo' />
+      <section className='wrap'>
+        <div className='circle'></div>
+        <div className='circle'></div>
+        <div className='circle'></div>
+      </section>
     </div>
   )
 }

@@ -3,11 +3,7 @@ import { createApi } from 'unsplash-js'
 const KEY = 'NFA38si_LllBDsWyomiqO9-XP4rRfAZJRAiB8fY5ZCA'
 const unsplash = createApi({ accessKey: KEY })
 
-export const fetchByQuery = async ({
-  query = '',
-  page = 1,
-  order = 'popular'
-}) => {
+export const fetchByQuery = async ({ query = '', page = 1 }) => {
   let searchQuery = query
   if (searchQuery === '') {
     searchQuery = 'photos'
@@ -17,8 +13,8 @@ export const fetchByQuery = async ({
     const response = await unsplash.search.getPhotos({
       query: searchQuery,
       page,
-      perPage: 14,
-      order_by: order
+      perPage: 28,
+      order_by: 'popular'
     })
     return response
   } catch (error) {

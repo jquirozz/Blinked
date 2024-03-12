@@ -1,28 +1,45 @@
-import { useState } from 'react'
+import { useEffect } from 'react'
+import { useParams } from 'react-router'
 
-import UseFetchImages from '../../hooks/UseFetchImages'
-import { fetchByQuery } from '../../services/fetchByQuery'
+import useFetchByQuery from '../../hooks/UseFetchByQuery'
 
 import Loading from '../../components/Loading'
 import NotFound from '../NotFound'
 
-import Gallery from '../../components/gallery/Gallery'
 import './Home.scss'
+import Gallery from '../../components/Gallery'
+import PopularTags from './components/PopularTags'
 
-function Home () {
-  const [page, setPage] = useState(1)
-  const { images, maxPage, error, loading } = UseFetchImages({
-    order: 'latest',
-    page,
-    fetchBy: fetchByQuery
+function Home ({ topic, setTopic, page, setPage }) {
+  const { images, maxPage, error, loading } = useFetchByQuery({
+    query: topic,
+    page
   })
+  const { query } = useParams()
+
+  useEffect(() => {
+    if (query) {
+      setPage(1)
+      setTopic(query)
+    }
+  }, [setTopic, query, setPage])
+
+  useEffect(() => {
+    console.log(images, maxPage, error, loading)
+  }, [images, maxPage, error, loading])
 
   if (loading) return <Loading />
   if (error) return <NotFound />
 
   return (
     <div className='Home'>
-      <Gallery array={images} page={page} maxPage={maxPage} setPage={setPage} />
+      <PopularTags />
+      <Gallery
+        images={images}
+        page={page}
+        setPage={setPage}
+        maxPage={maxPage}
+      />
     </div>
   )
 }
