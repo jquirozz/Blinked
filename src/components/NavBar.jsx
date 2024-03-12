@@ -28,22 +28,35 @@ function NavBar ({ topic, setTopic, setPage }) {
         <div className='menu' onClick={handleMenu}>
           {!show ? <IoMenu /> : <IoClose />}
         </div>
-        {show && (
-          <div className='list'>
-            <Link
-              to='https://unsplash.com/'
-              target='_blank'
-              rel='noopener noreferrer'
-            >
-              <h3>Unsplash</h3>
-              <FaUnsplash />
-            </Link>
-            <NavLink to='/profile' className='pfp'>
-              <h3>My profile</h3>
-              <img src='/nopfp.webp' alt='Profile picture' />
-            </NavLink>
-          </div>
-        )}
+        <section className={`mobile ${!show && 'hide'}`}>
+          <Link
+            to='https://unsplash.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <h3>Unsplash</h3>
+            <FaUnsplash />
+          </Link>
+          <NavLink to='/profile' className='pfp'>
+            <h3>My profile</h3>
+            <img src='/nopfp.webp' alt='Profile picture' />
+          </NavLink>
+        </section>
+
+        <section className='wide'>
+          <Link
+            to='https://unsplash.com/'
+            target='_blank'
+            rel='noopener noreferrer'
+          >
+            <h3>Unsplash</h3>
+            <FaUnsplash />
+          </Link>
+          <NavLink to='/profile' className='pfp'>
+            <h3>My profile</h3>
+            <img src='/nopfp.webp' alt='Profile picture' />
+          </NavLink>
+        </section>
       </aside>
     </nav>
   )

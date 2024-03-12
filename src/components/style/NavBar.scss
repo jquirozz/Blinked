@@ -1,4 +1,6 @@
 .NavBar {
+    z-index: 15;
+    
     display: flex;
     align-items: center;
     justify-content: space-evenly;
@@ -34,7 +36,7 @@
             }
         }
 
-        .list {
+        .wide {
             display: flex;
             align-items: center;
             gap: 0.5rem;
@@ -78,15 +80,14 @@
                 }
             }
         }
+        .mobile {
+            display: none;
+        }
     }
 }
 
 @media (max-width: 650px) {
     .NavBar {
-        display: flex;
-        align-items: center;
-        justify-content: space-between;
-
         // logo
 
         // SearchBar
@@ -101,7 +102,10 @@
                 display: grid;
             }
 
-            .list {
+            .wide {
+                display: none;
+            }
+            .mobile {
                 position: absolute;
                 top: 3.75rem;
                 left: 0;
@@ -158,6 +162,9 @@
                         border-radius: 50%;
                     }
                 }
+            }
+            .hide {
+                display: none;
             }
         }
     }

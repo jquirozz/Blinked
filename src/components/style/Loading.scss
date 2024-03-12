@@ -1,7 +1,46 @@
 .Loading {
+    --time: 400ms;
+    --size: 1.25rem;
+
     display: grid;
     place-items: center;
 
-    min-height: 200px;
+    width: 100%;
     height: 100%;
+
+    .wrap {
+        display: flex;
+        align-items: center;
+        gap: var(--size);
+
+        .circle {
+            width: var(--size);
+            aspect-ratio: 1;
+            border-radius: 50%;
+
+            animation-delay: var(--time);
+            animation: scaleIt var(--time) ease-in-out infinite alternate;
+
+            &:nth-child(1) {
+                animation-delay: calc(var(--time) * 0.25);
+            }
+            &:nth-child(2) {
+                animation-delay: calc(var(--time) * 0.5);
+            }
+            &:nth-child(3) {
+                animation-delay: calc(var(--time) * 0.75);
+            }
+
+            @keyframes scaleIt {
+                from {
+                    transform: scale(1);
+                    background: #000;
+                }
+                to {
+                    transform: scale(1.25);
+                    background: var(--main);
+                }
+            }
+        }
+    }
 }
