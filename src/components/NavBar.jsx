@@ -8,7 +8,7 @@ import { FaUnsplash } from 'react-icons/fa6'
 import { IoMenu, IoClose } from 'react-icons/io5'
 
 function NavBar ({ topic, setTopic, setPage }) {
-  const [show, setShow] = useState(true)
+  const [show, setShow] = useState(false)
 
   const handleMenu = () => setShow(!show)
   const handleGoHome = () => {
