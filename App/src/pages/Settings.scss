@@ -1,0 +1,42 @@
+.Settings {
+    .settingTitle {
+        display: flex;
+        align-items: center;
+
+        gap: 1.5rem;
+        padding: 3rem;
+        padding-bottom: 0.5rem;
+
+        & svg {
+            font-size: 3rem;
+        }
+
+        & h2 {
+            font-size: 3rem;
+            font-weight: 800;
+            text-transform: uppercase;
+        }
+    }
+
+    .theme {
+        display: flex;
+        align-items: center;
+        gap: 0.75rem;
+
+        & h4 {
+            font-size: 1rem;
+        }
+
+        & button {
+            padding: 0.25rem 1.75rem;
+
+            color: var(--sec);
+            background-color: var(--main);
+
+            & h4 {
+                font-size: 1rem;
+                font-weight: 600;
+            }
+        }
+    }
+}

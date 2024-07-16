@@ -3,8 +3,10 @@
     flex-direction: column;
     justify-content: space-between;
 
-    color: #fff;
-    background-color: #000;
+    box-shadow: 5px 5px 20px var(--sec1);
+
+    color: var(--main);
+    background-color: var(--sec);
 
     & header {
         display: grid;
@@ -33,8 +35,8 @@
             padding-left: 1.25rem;
 
             border: 1px solid transparent;
-            border-left-color: #333;
-            border-bottom-color: #333;
+            border-left-color: var(--sec1);
+            border-bottom-color: var(--sec1);
 
             border-bottom-left-radius: 5px;
             border-top-right-radius: 5px;
@@ -49,12 +51,14 @@
             }
         }
         & a:hover {
-            background-color: #111;
+            background-color: var(sec1);
         }
         & a.active {
-            border-left-color: #444;
-            border-bottom-color: #444;
-            background-color: #222;
+            border-left-color: var(--sec3);
+            border-bottom-color: var(--sec3);
+
+            color: var(--sec);
+            background-color: var(--main);
         }
     }
 }

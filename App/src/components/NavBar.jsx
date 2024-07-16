@@ -23,11 +23,16 @@ const LINKS = [
   },
 ];
 
-function NavBar() {
+function NavBar({ theme }) {
   return (
     <nav className="NavBar">
       <header>
-        <img src="/assets/logos/tr_white.png" alt="" />
+        <img
+          src={`/assets/logos/${
+            theme === "light" ? "tr_black.png" : "tr_white.png"
+          }`}
+          alt=""
+        />
       </header>
       <section className="links">
         {LINKS.map(({ text, url, icon }) => (

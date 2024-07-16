@@ -6,11 +6,53 @@
 }
 
 :root {
+  --main: #fff;
+  --sec: #000;
+  --sec1: #222;
+  --sec2: #444;
+  --sec3: #666;
+
   user-select: none;
   font-family: "Montserrat", sans-serif;
+
+  
+}
+
+body {
+  color: var(--main);
+  background-color: var(--sec);
 }
 
 a {
   text-decoration: none;
   color: inherit;
+}
+
+button {
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  border: 1px solid transparent;
+  border-top-right-radius: 5px;
+  border-bottom-left-radius: 5px;
+}
+
+
+/* LIGHT THEME */
+.light {
+  --main: #000;
+  --sec: #fff;
+  --sec1: #ddd;
+  --sec2: #bbb;
+  --sec3: #999;
+}
+
+/* DARK THEME */
+.dark {
+    --color: #fff;
+    --sec: #000;
+    --sec1: #222;
+    --sec2: #444;
+    --sec3: #666;
 }
