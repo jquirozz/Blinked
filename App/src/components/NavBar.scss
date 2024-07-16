@@ -1,0 +1,96 @@
+.NavBar {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    color: #fff;
+    background-color: #000;
+
+    & header {
+        display: grid;
+        place-items: center;
+
+        gap: 0.25rem;
+        padding: 1.5rem 0;
+
+        & img {
+            width: 65%;
+        }
+    }
+
+    .links,
+    & footer {
+        display: grid;
+        gap: 0.5rem;
+        padding: 0.25rem;
+
+        & a {
+            display: flex;
+            align-items: center;
+
+            gap: 1rem;
+            padding: 1rem;
+            padding-left: 1.25rem;
+
+            border: 1px solid transparent;
+            border-left-color: #333;
+            border-bottom-color: #333;
+
+            border-bottom-left-radius: 5px;
+            border-top-right-radius: 5px;
+
+            & svg {
+                font-size: 1.25rem;
+            }
+
+            & h3 {
+                font-weight: 500;
+                font-size: 1.25rem;
+            }
+        }
+        & a:hover {
+            background-color: #111;
+        }
+        & a.active {
+            border-left-color: #444;
+            border-bottom-color: #444;
+            background-color: #222;
+        }
+    }
+}
+
+@media (max-width: 700px) {
+    .NavBar {
+        display: grid;
+        grid-template-columns: 3fr 1fr;
+
+        & header {
+            display: none;
+        }
+
+        .links,
+        & footer {
+            display: flex;
+            padding: 0;
+            gap: 0;
+
+            & a {
+                flex: 1;
+                display: grid;
+                place-items: center;
+
+                padding-inline: 1rem;
+
+                border: none;
+
+                & svg {
+                    font-size: 1.5rem;
+                }
+
+                & h3 {
+                    display: none;
+                }
+            }
+        }
+    }
+}
