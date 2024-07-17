@@ -22,21 +22,23 @@ function App() {
     <div className="App">
       <BrowserRouter>
         <NavBar theme={theme} />
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/explore" element={<Explore />} />
-          <Route path="/profile" element={<Profile />} />
-          <Route
-            path="/settings"
-            element={
-              <Settings
-                theme={theme}
-                themes={themes}
-                handleTheme={handleTheme}
-              />
-            }
-          />
-        </Routes>
+        <div className="screen">
+          <Routes>
+            <Route path="/" element={<Home />} />
+            <Route path="/explore" element={<Explore />} />
+            <Route path="/profile" element={<Profile />} />
+            <Route
+              path="/settings"
+              element={
+                <Settings
+                  theme={theme}
+                  themes={themes}
+                  handleTheme={handleTheme}
+                />
+              }
+            />
+          </Routes>
+        </div>
       </BrowserRouter>
     </div>
   );

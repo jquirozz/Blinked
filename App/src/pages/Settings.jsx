@@ -16,7 +16,7 @@ function Settings({ theme, handleTheme, themes }) {
           <h4>Theme</h4>
           {themes.map((newTheme, key) => (
             <button
-              className={theme === newTheme && "active"}
+              className={theme === newTheme ? "active" : ""}
               key={key}
               onClick={() => handleTheme(newTheme)}
             >
