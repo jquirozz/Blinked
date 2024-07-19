@@ -6,11 +6,11 @@
 }
 
 :root {
-  --main: #fff;
-  --sec: #000;
+  --main: #eee;
+  --sec: #111;
   --sec1: #222;
-  --sec2: #444;
-  --sec3: #666;
+  --sec2: #333;
+  --sec3: #555;
 
   user-select: none;
   font-family: "Montserrat", sans-serif;
@@ -41,7 +41,7 @@ button {
 
 /* LIGHT THEME */
 .light {
-  --main: #000;
+  --main: #111;
   --sec: #fff;
   --sec1: #ddd;
   --sec2: #bbb;
@@ -50,9 +50,9 @@ button {
 
 /* DARK THEME */
 .dark {
-    --color: #fff;
-    --sec: #000;
+    --color: #eee;
+    --sec: #111;
     --sec1: #222;
-    --sec2: #444;
-    --sec3: #666;
+    --sec2: #333;
+    --sec3: #555;
 }
