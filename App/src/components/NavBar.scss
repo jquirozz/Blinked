@@ -3,6 +3,8 @@
     flex-direction: column;
     justify-content: space-between;
 
+    box-shadow: 0.25rem 0 1rem var(--sec1);
+
     color: var(--main);
     background-color: var(--sec);
 
@@ -35,8 +37,8 @@
             border-left-color: var(--sec1);
             border-bottom-color: var(--sec1);
 
-            border-bottom-left-radius: 5px;
-            border-top-right-radius: 5px;
+            border-bottom-left-radius: 1rem;
+            border-top-right-radius: 1rem;
 
             & svg {
                 font-size: 1.25rem;

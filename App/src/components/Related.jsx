@@ -1,5 +1,7 @@
+import "./Related.scss";
+
 function Related() {
-  return <div>Related</div>;
+  return <div className="Related">Related</div>;
 }
 
 export default Related;

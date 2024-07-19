@@ -1,0 +1,13 @@
+.Explore {
+    display: grid;
+    gap: 0.5rem;
+
+    .form {
+        height: 3.5rem;
+
+        border-top-right-radius: 1rem;
+        border-bottom-left-radius: 1rem;
+
+        background-color: #000;
+    }
+}
